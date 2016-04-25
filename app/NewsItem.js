@@ -1,8 +1,39 @@
 import React from 'react';
 import URL from 'url';
+import Moment from 'moment';
 import './NewsItem.css';
 
 export default class NewsItem extends React.Component {
+  getCommentLink() {
+    var commentText = 'discuss';
+    if(this.props.item.kids && this.props.item.kids.length) {
+      commentText = this.props.item.kids.length + ' comment';
+    }
+
+    return (
+        <a href={'https://news.ycombinator.com/item?id=' + this.props.item.id}>{commentText}</a>
+        );
+  }
+
+  getSubtext() {
+    return (
+        <div className="newsItem-subtext">
+          {this.props.item.score} points by <a href={'https://news.ycombinator.com/user?id=' + this.props.item.by}>{this.props.item.by}</a> {Moment.utc(this.props.item.time * 1000).fromNow()} | {this.getCommentLink()}
+        </div>
+        );
+  }
+
+  getTitle() {
+    return (
+        <div className="newsItem-title">
+          <a className="newsItem-titleLink" href={this.props.item.url}>{this.props.item.title}</a>
+          <span className="newsItem-domain">
+            ({this.getDomain()})
+          </span>
+        </div>
+        );
+  }
+
   getDomain() {
     return URL.parse(this.props.item.url).hostname;
   }
@@ -10,10 +41,8 @@ export default class NewsItem extends React.Component {
   render() {
     return (
         <div className="newsItem">
-          <a className="newsItem-titleLink" href={this.props.item.url}>{this.props.item.title}</a>
-          <span className="newsItem-domain">
-            ({this.getDomain()})
-          </span>
+          {this.getTitle()}
+          {this.getSubtext()}
         </div>
         );
   }
