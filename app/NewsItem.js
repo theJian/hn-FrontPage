@@ -4,6 +4,24 @@ import Moment from 'moment';
 import './NewsItem.css';
 
 export default class NewsItem extends React.Component {
+  getRank() {
+    return (
+        <div className="newsItem-rank">
+          {this.props.rank}.
+        </div>
+        );
+  }
+
+  getVote() {
+    return (
+        <div className="newsItem-vote">
+          <a href={'https://news.ycombinator.com/vote?for='+ this.props.item.id + '&dir=up&goto=news'}>
+            <img src="./grayarrow.gif" width="10" />
+          </a>
+        </div>
+        );
+  }
+
   getCommentLink() {
     var commentText = 'discuss';
     if(this.props.item.kids && this.props.item.kids.length) {
@@ -41,8 +59,12 @@ export default class NewsItem extends React.Component {
   render() {
     return (
         <div className="newsItem">
-          {this.getTitle()}
-          {this.getSubtext()}
+          {this.getRank()}
+          {this.getVote()}
+          <div className="newsItem-itemText">
+            {this.getTitle()}
+            {this.getSubtext()}
+          </div>
         </div>
         );
   }

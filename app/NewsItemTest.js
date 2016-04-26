@@ -18,5 +18,5 @@ function test() {
     "url" : "http://www.getdropbox.com/u/2/screencast.html"
   };
   
-  render(<NewsItem item={fakeItem} />, $('#content')[0]);
+  render(<NewsItem item={fakeItem} rank={1} />, $('#content')[0]);
 }
