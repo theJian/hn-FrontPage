@@ -60,6 +60,12 @@
 
 	var _NewsItem2 = _interopRequireDefault(_NewsItem);
 
+	var _NewsHeader = __webpack_require__(280);
+
+	var _NewsHeader2 = _interopRequireDefault(_NewsHeader);
+
+	__webpack_require__(283);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	test();
@@ -77,7 +83,8 @@
 	    "url": "http://www.getdropbox.com/u/2/screencast.html"
 	  };
 
-	  (0, _reactDom.render)(_react2.default.createElement(_NewsItem2.default, { item: fakeItem, rank: 1 }), (0, _jquery2.default)('#content')[0]);
+	  // render(<NewsItem item={fakeItem} rank={1} />, $('#content')[0]);
+	  (0, _reactDom.render)(_react2.default.createElement(_NewsHeader2.default, null), (0, _jquery2.default)('#content')[0]);
 	}
 
 /***/ },
@@ -45583,6 +45590,164 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
+
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(281);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var NewsHeader = function (_React$Component) {
+	  _inherits(NewsHeader, _React$Component);
+
+	  function NewsHeader() {
+	    _classCallCheck(this, NewsHeader);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(NewsHeader).apply(this, arguments));
+	  }
+
+	  _createClass(NewsHeader, [{
+	    key: 'getLogo',
+	    value: function getLogo() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'newsHeader-logo' },
+	        _react2.default.createElement(
+	          'a',
+	          { href: 'https://news.ycombinator.com/' },
+	          _react2.default.createElement('img', { src: 'https://news.ycombinator.com/y18.gif' })
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'getTitle',
+	    value: function getTitle() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'newsHeader-title' },
+	        _react2.default.createElement(
+	          'a',
+	          { className: 'newsHeader-textLink', href: 'https://news.ycombinator.com/' },
+	          'Hacker News'
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'newsHeader' },
+	        this.getLogo(),
+	        this.getTitle()
+	      );
+	    }
+	  }]);
+
+	  return NewsHeader;
+	}(_react2.default.Component);
+
+	exports.default = NewsHeader;
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(282);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(279)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./NewsHeader.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./NewsHeader.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 282 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(278)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".newsHeader {\n  align-items: center;\n  background: #ff6600;\n  color: black;\n  display: flex;\n  font-size: 10pt;\n  padding: 2px;\n}\n\n.newsHeader-logo {\n  border: 1px solid white;\n  flex-basis: 18px;\n  height: 18px;\n}\n\n.newsHeader-textLink {\n  color: black;\n  text-decoration: none;\n}\n\n.newsHeader-title {\n  font-weight: bold;\n  margin-left: 4px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 283 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(284);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(279)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./app.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./app.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(278)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "body {\n  font-family: Verdana, sans-serif;\n}\n", ""]);
+
+	// exports
 
 
 /***/ }

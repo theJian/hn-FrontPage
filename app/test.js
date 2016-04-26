@@ -2,6 +2,8 @@ import $ from 'jquery';
 import React from 'react';
 import { render } from 'react-dom';
 import NewsItem from './NewsItem.js';
+import NewsHeader from './NewsHeader.js';
+import './app.css';
 
 test();
 
@@ -18,5 +20,7 @@ function test() {
     "url" : "http://www.getdropbox.com/u/2/screencast.html"
   };
   
-  render(<NewsItem item={fakeItem} rank={1} />, $('#content')[0]);
+  // render(<NewsItem item={fakeItem} rank={1} />, $('#content')[0]);
+  render(<NewsHeader />, $('#content')[0]);
 }
+
