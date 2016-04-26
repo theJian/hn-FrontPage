@@ -29941,6 +29941,19 @@
 	  }
 
 	  _createClass(NewsList, [{
+	    key: 'getMore',
+	    value: function getMore() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'newsList-more' },
+	        _react2.default.createElement(
+	          'a',
+	          { className: 'newsList-moreLink', href: 'https://news.ycombinator.com/news?p=2' },
+	          'More'
+	        )
+	      );
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -29953,7 +29966,8 @@
 	          this.props.items.map(function (item, index) {
 	            return _react2.default.createElement(_NewsItem2.default, { key: item.id, item: item, rank: index + 1 });
 	          })
-	        )
+	        ),
+	        this.getMore()
 	      );
 	    }
 	  }]);
@@ -45868,7 +45882,7 @@
 
 
 	// module
-	exports.push([module.id, ".newsList {\n  background: #f6f6ef;\n  margin-left: auto;\n  margin-right: auto;\n  width: 85%;\n}\n", ""]);
+	exports.push([module.id, ".newsList {\n  background: #f6f6ef;\n  margin-left: auto;\n  margin-right: auto;\n  width: 85%;\n}\n\n.newsList-more {\n  margin-left: 40px; /* matches NewsItem rank and vote */\n  margin-top: 10px;\n  padding-bottom: 10px;\n}\n\n.newsList-moreLink {\n  color: black;\n  font-size: 10pt;\n  text-decoration: none;\n}\n", ""]);
 
 	// exports
 

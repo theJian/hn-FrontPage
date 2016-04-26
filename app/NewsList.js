@@ -4,6 +4,14 @@ import NewsItem from './NewsItem.js';
 import './NewsList.css';
 
 export default class NewsList extends React.Component {
+  getMore() {
+    return (
+        <div className="newsList-more">
+          <a className="newsList-moreLink" href="https://news.ycombinator.com/news?p=2">More</a>
+        </div>
+        );
+  }
+
   render() {
     return (
         <div className="newsList">
@@ -17,6 +25,7 @@ export default class NewsList extends React.Component {
               })
             }
           </div>
+          {this.getMore()}
         </div>
         );
   }
