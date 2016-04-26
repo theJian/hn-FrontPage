@@ -45628,6 +45628,41 @@
 	  }
 
 	  _createClass(NewsHeader, [{
+	    key: 'getNav',
+	    value: function getNav() {
+	      var navLinks = [{
+	        name: 'new',
+	        url: 'newest'
+	      }, {
+	        name: 'comments',
+	        url: 'newcomments'
+	      }, {
+	        name: 'show',
+	        url: 'show'
+	      }, {
+	        name: 'ask',
+	        url: 'ask'
+	      }, {
+	        name: 'jobs',
+	        url: 'jobs'
+	      }, {
+	        name: 'submit',
+	        url: 'submit'
+	      }];
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'newsHeader-nav' },
+	        navLinks.map(function (navLink) {
+	          return _react2.default.createElement(
+	            'a',
+	            { key: navLink.url, className: 'newsHeader-navLink newsHeader-textLink', href: "https://news.ycombinator.com/" + navLink.url },
+	            navLink.name
+	          );
+	        })
+	      );
+	    }
+	  }, {
 	    key: 'getLogo',
 	    value: function getLogo() {
 	      return _react2.default.createElement(
@@ -45660,7 +45695,8 @@
 	        'div',
 	        { className: 'newsHeader' },
 	        this.getLogo(),
-	        this.getTitle()
+	        this.getTitle(),
+	        this.getNav()
 	      );
 	    }
 	  }]);
@@ -45705,7 +45741,7 @@
 
 
 	// module
-	exports.push([module.id, ".newsHeader {\n  align-items: center;\n  background: #ff6600;\n  color: black;\n  display: flex;\n  font-size: 10pt;\n  padding: 2px;\n}\n\n.newsHeader-logo {\n  border: 1px solid white;\n  flex-basis: 18px;\n  height: 18px;\n}\n\n.newsHeader-textLink {\n  color: black;\n  text-decoration: none;\n}\n\n.newsHeader-title {\n  font-weight: bold;\n  margin-left: 4px;\n}\n", ""]);
+	exports.push([module.id, ".newsHeader {\n  align-items: center;\n  background: #ff6600;\n  color: black;\n  display: flex;\n  font-size: 10pt;\n  padding: 2px;\n}\n\n.newsHeader-logo {\n  border: 1px solid white;\n  flex-basis: 18px;\n  height: 18px;\n}\n\n.newsHeader-textLink {\n  color: black;\n  text-decoration: none;\n}\n\n.newsHeader-title {\n  font-weight: bold;\n  margin-left: 4px;\n}\n\n.newsHeader-nav {\n  flex-grow: 1;\n  margin-left: 10px;\n}\n\n.newsHeader-navLink:not(:first-child)::before {\n  content: ' | ';\n}\n", ""]);
 
 	// exports
 
