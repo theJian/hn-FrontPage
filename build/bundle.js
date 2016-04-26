@@ -45628,6 +45628,19 @@
 	  }
 
 	  _createClass(NewsHeader, [{
+	    key: 'getLogin',
+	    value: function getLogin() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'newsHeader-login' },
+	        _react2.default.createElement(
+	          'a',
+	          { className: 'newsHeader-textLink', href: 'https://news.ycombinator.com/login?goto=news' },
+	          'login'
+	        )
+	      );
+	    }
+	  }, {
 	    key: 'getNav',
 	    value: function getNav() {
 	      var navLinks = [{
@@ -45696,7 +45709,8 @@
 	        { className: 'newsHeader' },
 	        this.getLogo(),
 	        this.getTitle(),
-	        this.getNav()
+	        this.getNav(),
+	        this.getLogin()
 	      );
 	    }
 	  }]);
@@ -45741,7 +45755,7 @@
 
 
 	// module
-	exports.push([module.id, ".newsHeader {\n  align-items: center;\n  background: #ff6600;\n  color: black;\n  display: flex;\n  font-size: 10pt;\n  padding: 2px;\n}\n\n.newsHeader-logo {\n  border: 1px solid white;\n  flex-basis: 18px;\n  height: 18px;\n}\n\n.newsHeader-textLink {\n  color: black;\n  text-decoration: none;\n}\n\n.newsHeader-title {\n  font-weight: bold;\n  margin-left: 4px;\n}\n\n.newsHeader-nav {\n  flex-grow: 1;\n  margin-left: 10px;\n}\n\n.newsHeader-navLink:not(:first-child)::before {\n  content: ' | ';\n}\n", ""]);
+	exports.push([module.id, ".newsHeader {\n  align-items: center;\n  background: #ff6600;\n  color: black;\n  display: flex;\n  font-size: 10pt;\n  padding: 2px;\n}\n\n.newsHeader-logo {\n  border: 1px solid white;\n  flex-basis: 18px;\n  height: 18px;\n}\n\n.newsHeader-textLink {\n  color: black;\n  text-decoration: none;\n}\n\n.newsHeader-title {\n  font-weight: bold;\n  margin-left: 4px;\n}\n\n.newsHeader-nav {\n  flex-grow: 1;\n  margin-left: 10px;\n}\n\n.newsHeader-navLink:not(:first-child)::before {\n  content: ' | ';\n}\n\n.newsHeader-login {\n  margin-right: 5px;\n}\n", ""]);
 
 	// exports
 

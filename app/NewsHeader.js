@@ -2,6 +2,14 @@ import React from 'react';
 import './NewsHeader.css';
 
 export default class NewsHeader extends React.Component {
+  getLogin() {
+    return (
+        <div className="newsHeader-login">
+          <a className="newsHeader-textLink" href="https://news.ycombinator.com/login?goto=news">login</a>
+        </div>
+        );
+  }
+
   getNav() {
     var navLinks = [
     {
@@ -67,6 +75,7 @@ export default class NewsHeader extends React.Component {
           {this.getLogo()}
           {this.getTitle()}
           {this.getNav()}
+          {this.getLogin()}
         </div>
         );
   }
