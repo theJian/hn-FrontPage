@@ -7,12 +7,14 @@ Install dependencies
 ```
 npm install
 ```
-
-To build, run
+To start development server
+```
+npm run start
+```
+To build
 ```
 npm run build
 ```
-It uses Webpack to build this project.
 
 # License
 GPL
