@@ -4,6 +4,7 @@
   "description": "A hacker news clone with react & webpack",
   "main": "app.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,7 +25,8 @@
     "less": "^2.6.1",
     "less-loader": "^2.2.3",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "jquery": "^2.2.3",
