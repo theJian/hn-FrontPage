@@ -2,6 +2,7 @@ import React from 'react';
 import URL from 'url';
 import Moment from 'moment';
 import './NewsItem.css';
+import ImageGrayArrow from './grayarrow.gif';
 
 export default class NewsItem extends React.Component {
   getRank() {
@@ -16,7 +17,7 @@ export default class NewsItem extends React.Component {
     return (
         <div className="newsItem-vote">
           <a href={'https://news.ycombinator.com/vote?for='+ this.props.item.id + '&dir=up&goto=news'}>
-            <img src="./grayarrow.gif" width="10" />
+            <img src={ImageGrayArrow} width="10" />
           </a>
         </div>
         );

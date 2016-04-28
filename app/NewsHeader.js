@@ -1,5 +1,6 @@
 import React from 'react';
 import './NewsHeader.css';
+import imageLogo from './y18.gif';
 
 export default class NewsHeader extends React.Component {
   getLogin() {
@@ -56,7 +57,7 @@ export default class NewsHeader extends React.Component {
   getLogo() {
     return (
         <div className="newsHeader-logo">
-          <a href="https://news.ycombinator.com/"><img src="https://news.ycombinator.com/y18.gif"/></a>
+          <a href="https://news.ycombinator.com/"><img src={imageLogo} /></a>
         </div>
         );
   }
