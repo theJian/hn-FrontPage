@@ -45,10 +45,10 @@ export default class NewsItem extends React.Component {
   getTitle() {
     return (
         <div className="newsItem-title">
-          <a className="newsItem-titleLink" href={this.props.item.url}>{this.props.item.title}</a>
-          <span className="newsItem-domain">
-            ({this.getDomain()})
-          </span>
+          <a className="newsItem-titleLink" href={this.props.item.url ? this.props.item.url : 'https://news.ycombinator.com/item?id=' + this.props.item.id}>{this.props.item.title}</a>
+          {
+            this.props.item.url && <span className="newsItem-domain">({this.getDomain()})</span>
+          }
         </div>
         );
   }

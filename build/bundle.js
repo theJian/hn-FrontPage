@@ -30566,10 +30566,10 @@
 	        { className: 'newsItem-title' },
 	        _react2.default.createElement(
 	          'a',
-	          { className: 'newsItem-titleLink', href: this.props.item.url },
+	          { className: 'newsItem-titleLink', href: this.props.item.url ? this.props.item.url : 'https://news.ycombinator.com/item?id=' + this.props.item.id },
 	          this.props.item.title
 	        ),
-	        _react2.default.createElement(
+	        this.props.item.url && _react2.default.createElement(
 	          'span',
 	          { className: 'newsItem-domain' },
 	          '(',
