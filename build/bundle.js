@@ -30572,9 +30572,13 @@
 	        this.props.item.url && _react2.default.createElement(
 	          'span',
 	          { className: 'newsItem-domain' },
-	          '(',
-	          this.getDomain(),
-	          ')'
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'https://news.ycombinator.com/from?site=' + this.getDomain() },
+	            '(',
+	            this.getDomain(),
+	            ')'
+	          )
 	        )
 	      );
 	    }
@@ -45848,7 +45852,7 @@
 
 
 	// module
-	exports.push([module.id, ".newsItem {\n  color: #828282;\n  margin-top: 5px;\n  align-items: baseline;\n  display: flex;\n}\n\n.newsItem-itemText {\n  flex-grow: 1;\n}\n\n.newsItem-rank {\n  flex-basis: 25px;\n  font-size: 10pt;\n  text-align: right;\n}\n\n.newsItem-vote {\n  flex-basis: 15px;\n  text-align: center;\n}\n.newsItem-titleLink {\n  color: black;\n  font-size: 10pt;\n  text-decoration: none;\n}\n\n.newsItem-domain {\n  font-size: 8pt;\n  margin-left: 5px;\n}\n\n.newsItem-subtext {\n  font-size: 7pt;\n}\n\n.newsItem-subtext > a {\n  color: #828282;\n  text-decoration: none;\n}\n\n.newsItem-subtext > a:hover {\n  text-decoration: underline;\n}\n\n", ""]);
+	exports.push([module.id, ".newsItem {\n  color: #828282;\n  margin-top: 5px;\n  align-items: baseline;\n  display: flex;\n}\n\n.newsItem-itemText {\n  flex-grow: 1;\n}\n\n.newsItem-rank {\n  flex-basis: 25px;\n  font-size: 10pt;\n  text-align: right;\n}\n\n.newsItem-vote {\n  flex-basis: 15px;\n  text-align: center;\n}\n.newsItem-titleLink {\n  color: black;\n  font-size: 10pt;\n  text-decoration: none;\n}\n\n.newsItem-domain {\n  font-size: 8pt;\n  margin-left: 5px;\n}\n\n.newsItem-domain > a {\n   color: #828282;\n   text-decoration: none;\n}\n\n.newsItem-subtext {\n  font-size: 7pt;\n}\n\n.newsItem-subtext > a {\n  color: #828282;\n  text-decoration: none;\n}\n\n.newsItem-subtext > a:hover {\n  text-decoration: underline;\n}\n\n", ""]);
 
 	// exports
 

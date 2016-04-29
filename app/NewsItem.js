@@ -47,7 +47,7 @@ export default class NewsItem extends React.Component {
         <div className="newsItem-title">
           <a className="newsItem-titleLink" href={this.props.item.url ? this.props.item.url : 'https://news.ycombinator.com/item?id=' + this.props.item.id}>{this.props.item.title}</a>
           {
-            this.props.item.url && <span className="newsItem-domain">({this.getDomain()})</span>
+            this.props.item.url && <span className="newsItem-domain"><a href={'https://news.ycombinator.com/from?site=' + this.getDomain()}>({this.getDomain()})</a></span>
           }
         </div>
         );

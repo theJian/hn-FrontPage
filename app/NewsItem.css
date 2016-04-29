@@ -30,6 +30,11 @@
   margin-left: 5px;
 }
 
+.newsItem-domain > a {
+   color: #828282;
+   text-decoration: none;
+}
+
 .newsItem-subtext {
   font-size: 7pt;
 }
