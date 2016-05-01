@@ -6,6 +6,10 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
+  devServer: {
+    hot: true,
+    contentBase: path.resolve(__dirname, 'build')
+  },
   module: {
     loaders: [
     {
