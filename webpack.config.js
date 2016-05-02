@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, 'app/app.js'),
@@ -8,6 +9,7 @@ module.exports = {
   },
   devServer: {
     hot: true,
+    inline: true,
     contentBase: path.resolve(__dirname, 'build')
   },
   module: {
@@ -29,5 +31,8 @@ module.exports = {
       loader: 'url-loader?limit=8192'
     }
     ]
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
